@@ -1,8 +1,9 @@
 #!/bin/bash
 
-cd "$HOME/workspace/system/bash/start"
+# go workspace bash path
+cd "$HOME/workspace/system/bash"
 
-source ../config/config.sh
+source config/config.sh
 
 cd $workspace_path
 
@@ -36,7 +37,7 @@ if [ ! -d "$laradock_path" ]; then
 
     cd "$laradock_path/mysql"
     
-    # echo "default_authentication_plugin=mysql_native_password" >> my.cnf
+    echo "default_authentication_plugin=mysql_native_password" >> my.cnf
 fi
 
 cd $workspace_path
@@ -44,3 +45,13 @@ cd $workspace_path
 if [ ! -d "$projects_path" ]; then
     mkdir $projects_path
 fi
+
+cd $HOME
+
+if [ -f ".bash_aliases" ]; then
+    mv ".bash_aliases" ".bash_aliases.old"
+fi
+
+cd $workspace_bash_path
+
+cp ".bash_aliases" "$HOME/.bash_aliases"
