@@ -51,7 +51,7 @@ if [ -z "$project_name" ]
             cd $laradock_path
 
             # install laravel
-            docker-compose exec workspace composer create-project --prefer-dist laravel/laravel $project_name "5.7.*"
+            docker-compose exec workspace --user=laradock create-project --prefer-dist laravel/laravel $project_name "5.7.*"
 
             # set storage folder permissions
             docker-compose exec workspace chmod -R 777 $project_name/storage

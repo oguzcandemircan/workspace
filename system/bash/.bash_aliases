@@ -58,7 +58,7 @@ function laravel() {
 }
 
 function workspace-ssh() {
-    ( laradock exec workspace bash)
+    ( laradock exec --user=laradock workspace bash)
 }
 
 alias new-project='workspace-bash-builders laravel.sh'
