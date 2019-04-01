@@ -3,7 +3,7 @@
 ## Setup
 1. :
 ```bash
-https://github.com/oguzcandemircan/workspace 
+git clone https://github.com/oguzcandemircan/workspace 
 && cd workspace 
 && bash system/bash/start.sh
 
@@ -11,7 +11,7 @@ https://github.com/oguzcandemircan/workspace
 
 2. :
 ```bash
-https://github.com/oguzcandemircan/workspace 
+git clone https://github.com/oguzcandemircan/workspace 
 && cd workspace 
 && mv .bash_aliases "$HOME/.bash_aliases" 
 && workspace-build
