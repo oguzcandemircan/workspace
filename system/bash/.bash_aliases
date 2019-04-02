@@ -74,7 +74,7 @@ alias ld-down='laradock-down'
 alias laradock-ssh='laradock exec workspace bash'
 alias ld-ssh='laradock-ssh'
 
-alias workspace-ssh='laradock-ssh'
+# alias workspace-ssh='laradock-ssh'
 
 # function project() {
 

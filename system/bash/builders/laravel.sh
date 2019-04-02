@@ -6,7 +6,6 @@
 
 cd `/bin/pwd`
 
-
 # set project name
 project_name=$1
 
@@ -51,13 +50,13 @@ if [ -z "$project_name" ]
             cd $laradock_path
 
             # install laravel
-            docker-compose exec workspace --user=laradock create-project --prefer-dist laravel/laravel $project_name "5.7.*"
+            docker-compose exec --user=laradock workspace composer create-project --prefer-dist laravel/laravel $project_name "5.7.*"
 
             # set storage folder permissions
-            docker-compose exec workspace chmod -R 777 $project_name/storage
+            docker-compose exec --user=laradock workspace chmod -R 777 $project_name/storage
 
             # set boostrap cache folder permissions
-            docker-compose exec workspace chmod -R 777 $project_name/bootstrap/cache
+            docker-compose exec --user=laradock workspace chmod -R 777 $project_name/bootstrap/cache
 
             # create if not exists database
             docker-compose exec mysql mysql -u root -proot -h localhost homestead -e "CREATE DATABASE IF NOT EXISTS $project_name"

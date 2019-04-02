@@ -8,8 +8,8 @@ source config/config.sh
 cd $workspace_path
 
 if [ ! -d "$laradock_path" ]; then
-    git init
-    git submodule add https://github.com/Laradock/laradock.git
+   
+    git clone https://github.com/Laradock/laradock.git
 
     cd $laradock_path
 
@@ -25,7 +25,7 @@ if [ ! -d "$laradock_path" ]; then
 
     sed "s#MYSQL_DATABASE=secret#MYSQL_DATABASE=secret#g" "$f" > "$f.new" && mv "$f.new" "$f"
 
-    rm "$f.new"
+    #rm "$f.new"
 
     cd "$laradock_path/nginx/sites"
     if [ ! -d "examples" ]; then
