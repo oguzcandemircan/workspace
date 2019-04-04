@@ -8,22 +8,22 @@ cd workspace
 bash system/bash/start.sh
 ```
 
-## useful commands / available commands / commands
+## available commands
 
 | Command       | Description |
 | ------------- |-------------|
 | new-laravel | create a new laravel project |
 | workspace-ssh | connect workspace container |
 | workspace | run command in workspace container |
-| cd workspace | go workspace path |
-| cd laradock  | go laradock path |
-| cd project   | go projects path |
+| cd-workspace | go workspace path |
+| cd-laradock  | go laradock path |
+| cd-project   | go projects path |
 | ls-project   | list projects |
+| mysql	       | run command in mysql container |
 | mysql-conn   | connect mysql container |
-
-| nginx        | docker-compose exec nginx $* |
-
-| ld-up | docker-compose up -d nginx mysql |
+| nginx        | run command in nginx container |
+| nginx-conn   | connect mysql container |
+| laradock-up or ld-up | docker-compose up -d nginx mysql |
 
 
 
@@ -92,11 +92,8 @@ function workspace-ssh() {
 }
 
 alias new-laravel='workspace-bash-builders laravel.sh'
-alias new-vue=''
-alias remove-project='workspace-bash-builders remove-project.sh'
 
 alias new-domain='workspace-bash-builders new_domain.sh'
-
 
 alias laradock-up='laradock up -d nginx mysql'
 alias ld-up='laradock-up'
